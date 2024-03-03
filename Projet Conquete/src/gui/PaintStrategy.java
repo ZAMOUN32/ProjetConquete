@@ -7,7 +7,7 @@ import java.awt.Graphics;
 import config.GameConfiguration;
 import engine.map.Block;
 import engine.map.Map;
-import engine.mobile.Aircraft;
+import engine.mobile.Unites;
 
 
 /**
@@ -33,8 +33,8 @@ public class PaintStrategy {
 		}
 	}
 
-	public void paint(Aircraft aircraft, Graphics graphics) {
-		Block position = aircraft.getPosition();
+	public void paint(Unites unites, Graphics graphics) {
+		Block position = unites.getPosition();
 		int blockSize = GameConfiguration.BLOCK_SIZE;
 
 		int y = position.getLine();
