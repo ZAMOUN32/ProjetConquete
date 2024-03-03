@@ -20,14 +20,14 @@ public class GameBuilder {
 	public static MobileElementManager buildInitMobile(Map map) {
 		MobileElementManager manager = new MobileElementManager(map);
 		
-		intializeAircraft(map, manager);
+		intializeUnites(map, manager);
 		
 		return manager;
 	}
 
-	private static void intializeAircraft(Map map, MobileElementManager manager) {
+	private static void intializeUnites(Map map, MobileElementManager manager) {
 		Block block = map.getBlock(GameConfiguration.LINE_COUNT - 1, (GameConfiguration.COLUMN_COUNT - 1) / 2);
-		Unites aircraft = new Unites(block);
+		Unites unite = new Unites(block);
 		manager.set(aircraft);
 	}
 
