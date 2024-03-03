@@ -28,7 +28,7 @@ public class GameBuilder {
 	private static void intializeUnites(Map map, MobileElementManager manager) {
 		Block block = map.getBlock(GameConfiguration.LINE_COUNT - 1, (GameConfiguration.COLUMN_COUNT - 1) / 2);
 		Unites unite = new Unites(block);
-		manager.set(aircraft);
+		manager.set(unite);
 	}
 
 }

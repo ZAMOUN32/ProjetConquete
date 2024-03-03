@@ -92,6 +92,12 @@ public class MainGUI extends JFrame implements Runnable {
 			case 'd':
 				manager.moveRightUnites();
 				break;
+			case 'z':
+				manager.moveUpUnites();
+				break;
+			case 's':
+				manager.moveDownUnites();
+				break;
 			default:
 				break;
 			}

@@ -47,6 +47,24 @@ public class MobileElementManager {
 			unites.setPosition(newPosition);
 		}
 	}
+	
+	public void moveUpUnites() {
+	    Block position = unites.getPosition();
+
+	    if (position.getLine() > 0) {
+	        Block newPosition = map.getBlock(position.getLine() - 1, position.getColumn());
+	        unites.setPosition(newPosition);
+	    }
+	}
+	
+	public void moveDownUnites() {
+	    Block position = unites.getPosition();
+
+	    if (position.getLine() < GameConfiguration.LINE_COUNT - 1) {
+	        Block newPosition = map.getBlock(position.getLine() + 1, position.getColumn());
+	        unites.setPosition(newPosition);
+	    }
+	}
 
 
 	/*private static int getRandomNumber(int min, int max) {
