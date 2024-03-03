@@ -37,8 +37,8 @@ public class GameDisplay extends JPanel {
 
 		paintStrategy.paint(map, g);
 
-		Aircraft aircraft = manager.getAircraft();
-		paintStrategy.paint(aircraft, g);
+		Unites unite = manager.getUnites();
+		paintStrategy.paint(unite, g);
 	}
 
 	
