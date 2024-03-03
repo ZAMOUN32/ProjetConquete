@@ -25,7 +25,7 @@ public class MobileElementManager {
 		this.unites = unites;
 	}
 	
-	public Unites getElement() {
+	public Unites getUnites() {
 		return unites;
 	}
 
