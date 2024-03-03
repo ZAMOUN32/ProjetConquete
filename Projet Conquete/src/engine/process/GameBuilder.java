@@ -3,7 +3,7 @@ package engine.process;
 import config.GameConfiguration;
 import engine.map.Block;
 import engine.map.Map;
-import engine.mobile.Aircraft;
+import engine.mobile.Unites;
 
 /**
  * Copyright SEDAMOP - Software Engineering
@@ -27,7 +27,7 @@ public class GameBuilder {
 
 	private static void intializeAircraft(Map map, MobileElementManager manager) {
 		Block block = map.getBlock(GameConfiguration.LINE_COUNT - 1, (GameConfiguration.COLUMN_COUNT - 1) / 2);
-		Aircraft aircraft = new Aircraft(block);
+		Unites aircraft = new Unites(block);
 		manager.set(aircraft);
 	}
 

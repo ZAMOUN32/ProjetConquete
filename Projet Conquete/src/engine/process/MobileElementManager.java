@@ -3,7 +3,7 @@ package engine.process;
 import config.GameConfiguration;
 import engine.map.Block;
 import engine.map.Map;
-import engine.mobile.Aircraft;
+import engine.mobile.Unites;
 
 /**
  * Copyright SEDAMOP - Software Engineering
@@ -14,37 +14,37 @@ import engine.mobile.Aircraft;
 public class MobileElementManager {
 	private Map map;
 
-	private Aircraft aircraft;
+	private Unites unites;
 
 
 	public MobileElementManager(Map map) {
 		this.map = map;
 	}
 
-	public void set(Aircraft aircraft) {
-		this.aircraft = aircraft;
+	public void set(Unites unites) {
+		this.unites = unites;
 	}
 	
-	public Aircraft getAircraft() {
-		return aircraft;
+	public Unites getElement() {
+		return unites;
 	}
 
-	public void moveLeftAirCraft() {
-		Block position = aircraft.getPosition();
+	public void moveLeftUnites() {
+		Block position = unites.getPosition();
 
 		if (position.getColumn() > 0) {
 			Block newPosition = map.getBlock(position.getLine(), position.getColumn() - 1);
-			aircraft.setPosition(newPosition);
+			unites.setPosition(newPosition);
 		}
 
 	}
 
-	public void moveRightAirCraft() {
-		Block position = aircraft.getPosition();
+	public void moveRightUnites() {
+		Block position = unites.getPosition();
 
 		if (position.getColumn() < GameConfiguration.COLUMN_COUNT - 1) {
 			Block newPosition = map.getBlock(position.getLine(), position.getColumn() + 1);
-			aircraft.setPosition(newPosition);
+			unites.setPosition(newPosition);
 		}
 	}
 
