@@ -87,10 +87,10 @@ public class MainGUI extends JFrame implements Runnable {
 			switch (keyChar) {
 
 			case 'q':
-				manager.moveLeftAirCraft();
+				manager.moveLeftUnites();
 				break;
 			case 'd':
-				manager.moveRightAirCraft();
+				manager.moveRightUnites();
 				break;
 			default:
 				break;
