@@ -16,5 +16,4 @@ public class TestGame {
 		Thread gameThread = new Thread(gameMainGUI);
 		gameThread.start();
 	}
-	test
 }
