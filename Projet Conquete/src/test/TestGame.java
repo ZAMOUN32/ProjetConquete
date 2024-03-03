@@ -4,7 +4,7 @@ import gui.MainGUI;
 
 /**
  * Copyright SEDAMOP - Software Engineering
- * 
+ * oui
  * @author tianxiao.liu@cyu.fr
  *
  */
