@@ -64,6 +64,19 @@ public class PaintStrategy {
 		graphics.drawImage(readImage("src/images/casernejaune.png"), x * blockSize + (blockSize - imageWidth) / 2, y * blockSize + (blockSize - imageHeight) / 2, null);
 		
 	}
+
+	public void paint(List<Block> batimentrange, Graphics graphics) {
+		for (Block block : batimentrange) {
+
+			int blockSize = GameConfiguration.BLOCK_SIZE;
+
+			int y = block.getLine();
+			int x = block.getColumn();
+
+			graphics.setColor(Color.ORANGE);
+			graphics.fillRect(x * blockSize, y * blockSize, blockSize, blockSize);
+		}
+	}
 	
 	public static Image readImage(String filePath) {
 		try {
