@@ -29,7 +29,7 @@ public class PaintStrategy {
 		for (int lineIndex = 0; lineIndex < map.getLineCount(); lineIndex++) {
 			for (int columnIndex = 0; columnIndex < map.getColumnCount(); columnIndex++) {
 				Block block = blocks[lineIndex][columnIndex];
-				graphics.drawImage(readImage("src/images/eau.png"),block.getColumn() * blockSize,block.getLine() * blockSize,blockSize, blockSize, null);
+				graphics.drawImage(readImage("src/images/grass.png"),block.getColumn() * blockSize,block.getLine() * blockSize,blockSize, blockSize, null);
 			}
 		}
 	}
