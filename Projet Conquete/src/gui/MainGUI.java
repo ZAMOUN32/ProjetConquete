@@ -17,6 +17,7 @@ import engine.map.Map;
 import engine.process.BatimentElementManager;
 import engine.process.GameBuilder;
 import engine.process.MobileElementManager;
+import engine.process.BatimentElementManager; 
 
 /**
  * Copyright SEDAMOP - Software Engineering
@@ -124,7 +125,8 @@ public class MainGUI extends JFrame implements Runnable {
 		public void mouseClicked(MouseEvent e) {
 			int x = e.getX();
 			int y = e.getY();
-
+			Block batimentpos = dashbord.getBatiments(x,y);
+			buldingmanager.putUnites(batimentpos);
 			
 		}
 
