@@ -47,6 +47,13 @@ public class GameDisplay extends JPanel {
 		paintStrategy.paint(batiment, g);
 	}
 
+	public Block getBatiments(int x, int y) {
+		int line = y / GameConfiguration.BLOCK_SIZE;
+		int column = x / GameConfiguration.BLOCK_SIZE;
+		return map.getBlock(line, column);
+	}
+	
+
 	
 
 }
