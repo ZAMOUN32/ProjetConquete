@@ -45,6 +45,9 @@ public class GameDisplay extends JPanel {
 		
 		Batiments batiment= building_manager.getBatiments();
 		paintStrategy.paint(batiment, g);
+
+		List<Block> batimentrange = buldingmanager.getBatiment(); 
+		paintStrategy.paint(batimentrange,g); 
 	}
 
 	public Block getBatiment(int x, int y) {
