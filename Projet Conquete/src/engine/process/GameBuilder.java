@@ -4,6 +4,7 @@ import config.GameConfiguration;
 import engine.map.Block;
 import engine.map.Map;
 import engine.mobile.Unites;
+import engine.mobile.Batiments;
 
 /**
  * Copyright SEDAMOP - Software Engineering
@@ -24,11 +25,24 @@ public class GameBuilder {
 		
 		return manager;
 	}
+	
+	public static BatimentElementManager buildInitBatiment(Map map) {
+		BatimentElementManager manager = new BatimentElementManager(map);
+		
+		intializeBatiments(map, manager);
+		
+		return manager;
+	}
 
 	private static void intializeUnites(Map map, MobileElementManager manager) {
 		Block block = map.getBlock(GameConfiguration.LINE_COUNT - 1, (GameConfiguration.COLUMN_COUNT - 1) / 2);
 		Unites unite = new Unites(block);
 		manager.set(unite);
 	}
-
+	
+	private static void intializeBatiments(Map map, BatimentElementManager manager) {
+		Block block = map.getBlock(GameConfiguration.LINE_COUNT - 20, (GameConfiguration.COLUMN_COUNT - 10) / 2);
+		Batiments batiment = new Batiments(block);
+		manager.set(batiment);
+	}
 }

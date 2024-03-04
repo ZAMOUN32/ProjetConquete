@@ -11,6 +11,7 @@ import javax.imageio.ImageIO;
 import config.GameConfiguration;
 import engine.map.Block;
 import engine.map.Map;
+import engine.mobile.Batiments;
 import engine.mobile.Unites;
 
 
@@ -50,6 +51,20 @@ public class PaintStrategy {
 
 	}
 
+	public void paint(Batiments batiment, Graphics graphics) {
+		Block position = batiment.getPosition();
+		int blockSize = GameConfiguration.BLOCK_SIZE;
+		int imageWidth = 20; // Largeur de l'image
+		int imageHeight = 20; // Hauteur de l'image
+		
+		int y = position.getLine();
+		int x = position.getColumn();
+		
+		graphics.setColor(Color.BLUE);
+		graphics.drawImage(readImage("src/images/casernejaune.png"), x * blockSize + (blockSize - imageWidth) / 2, y * blockSize + (blockSize - imageHeight) / 2, null);
+		
+	}
+	
 	public static Image readImage(String filePath) {
 		try {
 			return ImageIO.read(new File(filePath));
@@ -58,6 +73,8 @@ public class PaintStrategy {
 			return null;
 		}
 	}
+
+	
 	
 
 }

@@ -8,8 +8,9 @@ import javax.swing.JPanel;
 import config.GameConfiguration;
 import engine.map.Block;
 import engine.map.Map;
+import engine.mobile.Batiments;
 import engine.mobile.Unites;
-
+import engine.process.BatimentElementManager;
 import engine.process.MobileElementManager;
 
 /**
@@ -24,11 +25,13 @@ public class GameDisplay extends JPanel {
 
 	private Map map;
 	private MobileElementManager manager;
+	private BatimentElementManager building_manager;
 	private PaintStrategy paintStrategy = new PaintStrategy();
 
-	public GameDisplay(Map map, MobileElementManager manager) {
+	public GameDisplay(Map map, MobileElementManager manager, BatimentElementManager building_manager) {
 		this.map = map;
 		this.manager = manager;
+		this.building_manager = building_manager;
 	}
 
 	@Override
@@ -39,6 +42,9 @@ public class GameDisplay extends JPanel {
 
 		Unites unite = manager.getUnites();
 		paintStrategy.paint(unite, g);
+		
+		Batiments batiment= building_manager.getBatiments();
+		paintStrategy.paint(batiment, g);
 	}
 
 	

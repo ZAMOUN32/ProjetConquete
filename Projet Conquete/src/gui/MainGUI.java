@@ -14,6 +14,7 @@ import javax.swing.JTextField;
 import config.GameConfiguration;
 import engine.map.Block;
 import engine.map.Map;
+import engine.process.BatimentElementManager;
 import engine.process.GameBuilder;
 import engine.process.MobileElementManager;
 
@@ -32,6 +33,8 @@ public class MainGUI extends JFrame implements Runnable {
 	private final static Dimension preferredSize = new Dimension(GameConfiguration.WINDOW_WIDTH, GameConfiguration.WINDOW_HEIGHT);
 
 	private MobileElementManager manager;
+	
+	private BatimentElementManager building_manager;
 
 	private GameDisplay dashboard;
 
@@ -52,7 +55,8 @@ public class MainGUI extends JFrame implements Runnable {
 
 		map = GameBuilder.buildMap();
 		manager = GameBuilder.buildInitMobile(map);
-		dashboard = new GameDisplay(map, manager);
+		building_manager = GameBuilder.buildInitBatiment(map);
+		dashboard = new GameDisplay(map, manager, building_manager);
 
 		MouseControls mouseControls = new MouseControls();
 		dashboard.addMouseListener(mouseControls);
