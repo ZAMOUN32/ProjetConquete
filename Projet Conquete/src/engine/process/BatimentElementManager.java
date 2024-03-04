@@ -24,6 +24,10 @@ public class BatimentElementManager {
 	public Batiments getBatiments() {
 		return batiment;
 	}
+	public List<Block> getBatiment(){
+		return batimentrange; 
+	}
+	
 
 	public void putBatiment(Block position) {
 		
