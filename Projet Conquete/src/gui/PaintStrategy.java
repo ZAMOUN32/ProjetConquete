@@ -2,12 +2,17 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 
 import config.GameConfiguration;
 import engine.map.Block;
 import engine.map.Map;
 import engine.mobile.Unites;
+
 
 
 /**
@@ -24,11 +29,7 @@ public class PaintStrategy {
 		for (int lineIndex = 0; lineIndex < map.getLineCount(); lineIndex++) {
 			for (int columnIndex = 0; columnIndex < map.getColumnCount(); columnIndex++) {
 				Block block = blocks[lineIndex][columnIndex];
-
-				if ((lineIndex + columnIndex) % 2 == 0) {
-					graphics.setColor(Color.GRAY);
-					graphics.fillRect(block.getColumn() * blockSize, block.getLine() * blockSize, blockSize, blockSize);
-				}
+				graphics.drawImage(readImage("src/images/eau.png"),block.getColumn() * blockSize,block.getLine() * blockSize,blockSize, blockSize, null);
 			}
 		}
 	}
@@ -36,18 +37,27 @@ public class PaintStrategy {
 	public void paint(Unites unites, Graphics graphics) {
 		Block position = unites.getPosition();
 		int blockSize = GameConfiguration.BLOCK_SIZE;
-
+		int imageWidth = 20; // Largeur de l'image
+		int imageHeight = 20; // Hauteur de l'image
+		
 		int y = position.getLine();
 		int x = position.getColumn();
-
+		
 		graphics.setColor(Color.BLUE);
-		graphics.drawLine(x * blockSize + blockSize / 2, y * blockSize, x * blockSize, (y + 1) * blockSize);
-		graphics.drawLine(x * blockSize + blockSize / 2, y * blockSize, (x + 1) * blockSize, (y + 1) * blockSize);
-		graphics.drawLine(x * blockSize + blockSize / 2, y * blockSize, x * blockSize + blockSize / 2, (y + 1) * blockSize);
+		graphics.drawImage(readImage("src/images/armurejaune.png"), x * blockSize + (blockSize - imageWidth) / 2, y * blockSize + (blockSize - imageHeight) / 2, null);
+		
+		
 
 	}
 
-
+	public static Image readImage(String filePath) {
+		try {
+			return ImageIO.read(new File(filePath));
+		} catch (IOException e) {
+			System.err.println("-- Can not read the image file ! --");
+			return null;
+		}
+	}
 	
 
 }
