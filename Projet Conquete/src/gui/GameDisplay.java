@@ -1,7 +1,7 @@
 package gui;
 
 import java.awt.Graphics;
-
+import java.util.List;
 
 import javax.swing.JPanel;
 
@@ -46,7 +46,7 @@ public class GameDisplay extends JPanel {
 		Batiments batiment= building_manager.getBatiments();
 		paintStrategy.paint(batiment, g);
 
-		List<Block> batimentrange = buldingmanager.getBatiment(); 
+		List<Block> batimentrange = building_manager.getBatiment(); 
 		paintStrategy.paint(batimentrange,g); 
 	}
 

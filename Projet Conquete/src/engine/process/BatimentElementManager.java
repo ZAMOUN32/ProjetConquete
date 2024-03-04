@@ -1,8 +1,9 @@
 package engine.process;
 
 import java.util.ArrayList; 
-import java.util.List; 
+import java.util.List;
 
+import engine.map.Block;
 import engine.map.Map;
 import engine.mobile.Batiments;
 import engine.mobile.Unites;
@@ -42,6 +43,6 @@ public class BatimentElementManager {
 				batimentrange.add(map.getBlock(line - 1, column));
 				batimentrange.add(map.getBlock(line + 1, column));
 			}
-	}
 
 
+}

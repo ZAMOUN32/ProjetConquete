@@ -125,8 +125,8 @@ public class MainGUI extends JFrame implements Runnable {
 		public void mouseClicked(MouseEvent e) {
 			int x = e.getX();
 			int y = e.getY();
-			Block batimentpos = dashbord.getBatiment(x,y);
-			buldingmanager.putUnites(batimentpos);
+			Block batimentpos = dashboard.getBatiment(x,y);
+			building_manager.putBatiment(batimentpos);
 			
 		}
 
