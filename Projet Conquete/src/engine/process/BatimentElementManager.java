@@ -49,6 +49,27 @@ public class BatimentElementManager {
 		DeleteBrillance();
 	}
 	private void DeleteBrillance() {
-				batimentrange.clear();
+		if(batimentrange.size()>8) {
+			batimentrange.clear();
 		}
+	}
+	
+	public int size() {
+		// TODO Auto-generated method stub
+		return batimentrange.size();
+	}
+
+	public void clear() {
+		// TODO Auto-generated method stub
+		batimentrange.clear();
+	}
+	
+	public boolean IsBatiment(Block block) {
+		for (Batiments batiment : batiments) {
+			if(batiment.getPosition()==block) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

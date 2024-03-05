@@ -81,6 +81,7 @@ public class MainGUI extends JFrame implements Runnable {
 				System.out.println(e.getMessage());
 			}
 			dashboard.repaint();
+			//building_manager.nextRound();
 		}
 	}
 
@@ -126,8 +127,12 @@ public class MainGUI extends JFrame implements Runnable {
 			int x = e.getX();
 			int y = e.getY();
 			Block batimentpos = dashboard.getBatiment(x,y);
+			if(building_manager.IsBatiment(batimentpos)) {
 			building_manager.putBatiment(batimentpos);
-			
+			}
+			if(building_manager.size()>4) {
+				building_manager.clear();
+			}
 		}
 
 		@Override
