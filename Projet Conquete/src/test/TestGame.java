@@ -11,7 +11,7 @@ import gui.MainGUI;
 public class TestGame {
 	public static void main(String[] args) {
 
-		MainGUI gameMainGUI = new MainGUI("Aircraft game");
+		MainGUI gameMainGUI = new MainGUI("Conquête");
 
 		Thread gameThread = new Thread(gameMainGUI);
 		gameThread.start();
