@@ -43,10 +43,10 @@ public class GameDisplay extends JPanel {
 		Unites unite = manager.getUnites();
 		paintStrategy.paint(unite, g);
 		
-		Batiments batiment= building_manager.getBatiments();
-		paintStrategy.paint(batiment, g);
+		List<Batiments> batiment= building_manager.PosBatiment();
+		paintStrategy.paintB(batiment, g);
 
-		List<Block> batimentrange = building_manager.getBatiment(); 
+		List<Block> batimentrange = building_manager.BatimentRange(); 
 		paintStrategy.paint(batimentrange,g); 
 	}
 

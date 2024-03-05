@@ -35,6 +35,19 @@ public class PaintStrategy {
 			}
 		}
 	}
+	
+	public void paintB(List<Batiments> batiments, Graphics g) {
+		// TODO Auto-generated method stub
+		int blockSize = GameConfiguration.BLOCK_SIZE;
+		
+		int imageWidth = 20; // Largeur de l'image
+		int imageHeight = 20; // Hauteur de l'image
+		
+		for (Batiments batiment : batiments) {
+			Block block = batiment.getPosition();
+			g.drawImage(readImage("src/images/casernejaune.png"),block.getColumn() * blockSize + (blockSize - imageWidth) / 2,block.getLine() * blockSize +(blockSize - imageHeight) / 2,blockSize, blockSize, null);
+		}
+	}
 
 	public void paint(Unites unites, Graphics graphics) {
 		Block position = unites.getPosition();
@@ -87,6 +100,8 @@ public class PaintStrategy {
 			return null;
 		}
 	}
+
+	
 
 	
 	

@@ -43,6 +43,6 @@ public class GameBuilder {
 	private static void intializeBatiments(Map map, BatimentElementManager manager) {
 		Block block = map.getBlock(GameConfiguration.LINE_COUNT - 20, (GameConfiguration.COLUMN_COUNT - 10) / 2);
 		Batiments batiment = new Batiments(block);
-		manager.set(batiment);
+		manager.addBatiment(batiment);
 	}
 }
