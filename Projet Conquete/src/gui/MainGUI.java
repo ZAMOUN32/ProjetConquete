@@ -7,6 +7,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
@@ -26,11 +28,17 @@ import engine.process.BatimentElementManager;
  *
  */
 public class MainGUI extends JFrame implements Runnable {
-
+	
+	private int posx=0;
+	
+	private int posy=0;
+	
+	List<Block> savedbatimentrange = new ArrayList<Block>();
+	
 	private static final long serialVersionUID = 1L;
 
 	private Map map;
-
+	
 	private final static Dimension preferredSize = new Dimension(GameConfiguration.WINDOW_WIDTH, GameConfiguration.WINDOW_HEIGHT);
 
 	private MobileElementManager manager;
@@ -124,17 +132,36 @@ public class MainGUI extends JFrame implements Runnable {
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
+			
 			int x = e.getX();
 			int y = e.getY();
-			Block batimentpos = dashboard.getBatiment(x,y);
-			if(building_manager.IsBatiment(batimentpos)) {
-			building_manager.putBatiment(batimentpos);
+			
+			
+			if(posx==0&posy==0) {
+				Block batimentpos = dashboard.getBlock(x,y);
+				List<Block> batimentrange = new ArrayList<Block>();
+				if(building_manager.IsBatiment(batimentpos)) {
+					batimentrange = building_manager.putBatiment(batimentpos);
+					savedbatimentrange.addAll(batimentrange);
+					posx=x;
+					posy=y;
+				}
+			}else{
+				Block batimentpos = dashboard.getBlock(posx,posy);
+				Block unitespos = dashboard.getBlock(x,y);
+				for(Block bloc: savedbatimentrange){
+					if(unitespos == bloc) {
+						building_manager.addUnites(unitespos);
+					}
+				}
+				savedbatimentrange.clear();
 			}
+			
 			if(building_manager.size()>4) {
 				building_manager.clear();
 			}
 		}
-
+		
 		@Override
 		public void mousePressed(MouseEvent e) {
 

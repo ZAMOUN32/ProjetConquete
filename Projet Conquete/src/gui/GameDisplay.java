@@ -47,10 +47,12 @@ public class GameDisplay extends JPanel {
 		paintStrategy.paintB(batiment, g);
 
 		List<Block> batimentrange = building_manager.BatimentRange(); 
+		List<Unites> unites = building_manager.Unites();
+		paintStrategy.paintU(unites, g);
 		paintStrategy.paint(batimentrange,g); 
 	}
 
-	public Block getBatiment(int x, int y) {
+	public Block getBlock(int x, int y) {
 		int line = y / GameConfiguration.BLOCK_SIZE;
 		int column = x / GameConfiguration.BLOCK_SIZE;
 		return map.getBlock(line, column);
