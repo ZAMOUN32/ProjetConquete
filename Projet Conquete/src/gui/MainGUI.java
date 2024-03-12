@@ -157,8 +157,8 @@ public class MainGUI extends JFrame implements Runnable {
 				posx=0;
 				posy=0;
 			}
-			
-			if(building_manager.size()>4) {
+			Block batimentpos = dashboard.getBlock(x,y);
+			if(building_manager.size()>4 & !savedbatimentrange.contains(batimentpos)) {
 				building_manager.clear();
 			}
 		}
