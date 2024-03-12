@@ -147,14 +147,15 @@ public class MainGUI extends JFrame implements Runnable {
 					posy=y;
 				}
 			}else{
-				Block batimentpos = dashboard.getBlock(posx,posy);
 				Block unitespos = dashboard.getBlock(x,y);
 				for(Block bloc: savedbatimentrange){
 					if(unitespos == bloc) {
 						building_manager.addUnites(unitespos);
 					}
 				}
-				savedbatimentrange.clear();
+				//savedbatimentrange.clear();
+				posx=0;
+				posy=0;
 			}
 			
 			if(building_manager.size()>4) {

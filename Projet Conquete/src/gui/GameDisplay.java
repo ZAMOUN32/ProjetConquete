@@ -49,7 +49,7 @@ public class GameDisplay extends JPanel {
 		List<Block> batimentrange = building_manager.BatimentRange(); 
 		List<Unites> unites = building_manager.Unites();
 		paintStrategy.paintU(unites, g);
-		paintStrategy.paint(batimentrange,g); 
+		paintStrategy.paintBC(batimentrange,g, building_manager); 
 	}
 
 	public Block getBlock(int x, int y) {
