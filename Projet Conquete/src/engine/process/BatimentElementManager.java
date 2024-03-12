@@ -36,7 +36,14 @@ public class BatimentElementManager {
 	public List<Unites> Unites(){
 		return unites; 
 	}
-
+	public void putGrass(Block position) {
+		int line = position.getLine();
+		int column = position.getColumn();
+		this.batimentrange.add(map.getBlock(line, column));
+		this.batimentrange.add(map.getBlock(line, column));
+		this.batimentrange.add(map.getBlock(line, column));
+		this.batimentrange.add(map.getBlock(line, column));
+	}
 	public List<Block> putBatiment(Block position) {
 		
 		// Can not release a bomb on the border of the map.
