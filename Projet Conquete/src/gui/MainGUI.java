@@ -19,7 +19,7 @@ import engine.map.Map;
 import engine.process.BatimentElementManager;
 import engine.process.GameBuilder;
 import engine.process.MobileElementManager;
-import engine.process.BatimentElementManager; 
+
 
 /**
  * Copyright SEDAMOP - Software Engineering
@@ -157,6 +157,7 @@ public class MainGUI extends JFrame implements Runnable {
 				posx=0;
 				posy=0;
 			}
+			building_manager.BatimentRange();
 			Block batimentpos = dashboard.getBlock(x,y);
 			if(building_manager.size()>4 & !savedbatimentrange.contains(batimentpos)) {
 				building_manager.clear();

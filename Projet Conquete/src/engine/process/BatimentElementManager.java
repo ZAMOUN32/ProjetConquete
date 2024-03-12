@@ -3,7 +3,7 @@ package engine.process;
 import java.util.ArrayList; 
 import java.util.List;
 
-import config.GameConfiguration;
+
 import engine.map.Block;
 import engine.map.Map;
 import engine.mobile.Batiments;
@@ -22,6 +22,9 @@ public class BatimentElementManager {
 	
 	public void addBatiment(Batiments batiment) {
 		batiments.add(batiment);
+	}
+	public void addBatimentrange(Block batiment) {
+		batimentrange.add(batiment);
 	}
 	
 	public List<Batiments> PosBatiment(){
