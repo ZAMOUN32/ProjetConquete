@@ -145,6 +145,8 @@ public class MainGUI extends JFrame implements Runnable {
 					savedbatimentrange.addAll(batimentrange);
 					posx=x;
 					posy=y;
+				}if(building_manager.IsUnites(batimentpos)) {
+					building_manager.putUnites(batimentpos,3);
 				}else {
 					building_manager.putGrass(batimentpos);
 				}

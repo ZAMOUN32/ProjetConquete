@@ -13,7 +13,8 @@ import engine.mobile.Unites;
 public class BatimentElementManager {
 	private Map map;
 	private List<Batiments> batiments = new ArrayList<Batiments>();
-	private List<Block> batimentrange = new ArrayList<Block>(); 
+	private List<Block> batimentrange = new ArrayList<Block>();
+	private List<Block> unitesrange = new ArrayList<Block>();
 	private List<Unites> unites = new ArrayList<Unites>();
 	
 	public BatimentElementManager(Map map) {
@@ -62,6 +63,10 @@ public class BatimentElementManager {
 		this.batimentrange.add(map.getBlock(line + 1, column));
 		return batimentrange;
 		}
+	
+	public void putUnites(Block position, int distance) {
+		
+	}
 	
 	public void nextRound() {
 		DeleteBrillance();
