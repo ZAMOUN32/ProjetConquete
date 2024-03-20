@@ -19,7 +19,7 @@ import engine.map.Map;
 import engine.process.BatimentElementManager;
 import engine.process.GameBuilder;
 import engine.process.MobileElementManager;
-import engine.process.BatimentElementManager; 
+
 
 /**
  * Copyright SEDAMOP - Software Engineering
@@ -145,19 +145,25 @@ public class MainGUI extends JFrame implements Runnable {
 					savedbatimentrange.addAll(batimentrange);
 					posx=x;
 					posy=y;
+				}if(building_manager.IsUnites(batimentpos)) {
+					building_manager.putUnites(batimentpos,3);
+				}else {
+					building_manager.putGrass(batimentpos);
 				}
 			}else{
-				Block batimentpos = dashboard.getBlock(posx,posy);
 				Block unitespos = dashboard.getBlock(x,y);
 				for(Block bloc: savedbatimentrange){
 					if(unitespos == bloc) {
 						building_manager.addUnites(unitespos);
 					}
 				}
-				savedbatimentrange.clear();
+				//savedbatimentrange.clear();
+				posx=0;
+				posy=0;
 			}
-			
-			if(building_manager.size()>4) {
+			building_manager.BatimentRange();
+			Block batimentpos = dashboard.getBlock(x,y);
+			if(building_manager.size()>4 & !savedbatimentrange.contains(batimentpos)) {
 				building_manager.clear();
 			}
 		}

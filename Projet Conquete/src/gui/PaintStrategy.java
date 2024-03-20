@@ -14,6 +14,7 @@ import engine.map.Block;
 import engine.map.Map;
 import engine.mobile.Batiments;
 import engine.mobile.Unites;
+import engine.process.BatimentElementManager;
 
 
 
@@ -98,9 +99,23 @@ public class PaintStrategy {
 
 			int y = block.getLine();
 			int x = block.getColumn();
-
+			
 			graphics.setColor(Color.ORANGE);
 			graphics.fillRect(x * blockSize, y * blockSize, blockSize, blockSize);
+		}
+	}
+	public void paintBC(List<Block> batimentrange, Graphics graphics, BatimentElementManager building_manager) {
+		for (Block block : batimentrange) {
+			
+			int blockSize = GameConfiguration.BLOCK_SIZE;
+
+			int y = block.getLine();
+			int x = block.getColumn();
+			
+			if(!building_manager.IsUnites(block)) {
+				graphics.setColor(Color.ORANGE);
+				graphics.fillRect(x * blockSize, y * blockSize, blockSize, blockSize);
+			}
 		}
 	}
 	
