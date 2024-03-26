@@ -107,8 +107,6 @@ public class MainGUI extends JFrame implements Runnable {
 					posy=y;
 				}if(building_manager.IsUnites(batimentpos)) {
 					building_manager.putUnites(batimentpos,3);
-				}else {
-					building_manager.putGrass(batimentpos);
 				}
 			}else{
 				Block unitespos = dashboard.getBlock(x,y);
@@ -123,6 +121,8 @@ public class MainGUI extends JFrame implements Runnable {
 				posy=0;
 				if(building_manager.IsBatiment(batimentpos)||building_manager.IsUnites(batimentpos)) {
 					building_manager.clear();
+				}else {
+					building_manager.putGrass(batimentpos);
 				}
 				
 			}

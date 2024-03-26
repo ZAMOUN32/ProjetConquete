@@ -44,6 +44,7 @@ public class BatimentElementManager {
 		this.batimentrange.add(map.getBlock(line, column));
 		this.batimentrange.add(map.getBlock(line, column));
 		this.batimentrange.add(map.getBlock(line, column));
+		this.batimentrange.add(map.getBlock(line, column));
 	}
 	public List<Block> putBatiment(Block position) {
 		
