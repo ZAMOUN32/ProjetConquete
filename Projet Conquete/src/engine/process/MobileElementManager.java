@@ -29,44 +29,6 @@ public class MobileElementManager {
 		return unites;
 	}
 
-	public void moveLeftUnites() {
-		Block position = unites.getPosition();
-
-		if (position.getColumn() > 0) {
-			Block newPosition = map.getBlock(position.getLine(), position.getColumn() - 1);
-			unites.setPosition(newPosition);
-		}
-
-	}
-
-	public void moveRightUnites() {
-		Block position = unites.getPosition();
-
-		if (position.getColumn() < GameConfiguration.COLUMN_COUNT - 1) {
-			Block newPosition = map.getBlock(position.getLine(), position.getColumn() + 1);
-			unites.setPosition(newPosition);
-		}
-	}
-	
-	public void moveUpUnites() {
-	    Block position = unites.getPosition();
-
-	    if (position.getLine() > 0) {
-	        Block newPosition = map.getBlock(position.getLine() - 1, position.getColumn());
-	        unites.setPosition(newPosition);
-	    }
-	}
-	
-	public void moveDownUnites() {
-	    Block position = unites.getPosition();
-
-	    if (position.getLine() < GameConfiguration.LINE_COUNT - 1) {
-	        Block newPosition = map.getBlock(position.getLine() + 1, position.getColumn());
-	        unites.setPosition(newPosition);
-	    }
-	}
-
-
 	/*private static int getRandomNumber(int min, int max) {
 		return (int) (Math.random() * (max + 1 - min)) + min;
 	}*/

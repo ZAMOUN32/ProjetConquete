@@ -35,13 +35,13 @@ public class GameBuilder {
 	}
 
 	private static void intializeUnites(Map map, MobileElementManager manager) {
-		Block block = map.getBlock(GameConfiguration.LINE_COUNT - 1, (GameConfiguration.COLUMN_COUNT - 1) / 2);
+		Block block = map.getBlock(GameConfiguration.LINE_COUNT - 10, (GameConfiguration.COLUMN_COUNT - 10) / 2);
 		Unites unite = new Unites(block);
 		manager.set(unite);
 	}
 	
 	private static void intializeBatiments(Map map, BatimentElementManager manager) {
-		Block block = map.getBlock(GameConfiguration.LINE_COUNT - 20, (GameConfiguration.COLUMN_COUNT - 10) / 2);
+		Block block = map.getBlock(GameConfiguration.LINE_COUNT - 2, (GameConfiguration.COLUMN_COUNT - 2) / 2);
 		Batiments batiment = new Batiments(block);
 		manager.addBatiment(batiment);
 	}

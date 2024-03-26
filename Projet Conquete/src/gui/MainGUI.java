@@ -55,12 +55,7 @@ public class MainGUI extends JFrame implements Runnable {
 	private void init() {
 
 		Container contentPane = getContentPane();
-		contentPane.setLayout(new BorderLayout());
-
-		KeyControls keyControls = new KeyControls();
-		JTextField textField = new JTextField();
-		textField.addKeyListener(keyControls);
-		contentPane.add(textField, BorderLayout.SOUTH);
+		contentPane.setLayout(new BorderLayout());		
 
 		map = GameBuilder.buildMap();
 		manager = GameBuilder.buildInitMobile(map);
@@ -90,41 +85,6 @@ public class MainGUI extends JFrame implements Runnable {
 			}
 			dashboard.repaint();
 			//building_manager.nextRound();
-		}
-	}
-
-	private class KeyControls implements KeyListener {
-
-		@Override
-		public void keyPressed(KeyEvent event) {
-			char keyChar = event.getKeyChar();
-			switch (keyChar) {
-
-			case 'q':
-				manager.moveLeftUnites();
-				break;
-			case 'd':
-				manager.moveRightUnites();
-				break;
-			case 'z':
-				manager.moveUpUnites();
-				break;
-			case 's':
-				manager.moveDownUnites();
-				break;
-			default:
-				break;
-			}
-		}
-
-		@Override
-		public void keyTyped(KeyEvent e) {
-
-		}
-
-		@Override
-		public void keyReleased(KeyEvent e) {
-
 		}
 	}
 

@@ -41,8 +41,8 @@ public class PaintStrategy {
 		// TODO Auto-generated method stub
 		int blockSize = GameConfiguration.BLOCK_SIZE;
 		
-		int imageWidth = 20; // Largeur de l'image
-		int imageHeight = 20; // Hauteur de l'image
+		int imageWidth = 40; // Largeur de l'image
+		int imageHeight = 40; // Hauteur de l'image
 		
 		for (Batiments batiment : batiments) {
 			Block block = batiment.getPosition();
@@ -53,8 +53,8 @@ public class PaintStrategy {
 	public void paint(Unites unites, Graphics graphics) {
 		Block position = unites.getPosition();
 		int blockSize = GameConfiguration.BLOCK_SIZE;
-		int imageWidth = 20; // Largeur de l'image
-		int imageHeight = 20; // Hauteur de l'image
+		int imageWidth = 40; // Largeur de l'image
+		int imageHeight = 40; // Hauteur de l'image
 		
 		int y = position.getLine();
 		int x = position.getColumn();
@@ -69,8 +69,8 @@ public class PaintStrategy {
 	public void paint(Batiments batiment, Graphics graphics) {
 		Block position = batiment.getPosition();
 		int blockSize = GameConfiguration.BLOCK_SIZE;
-		int imageWidth = 20; // Largeur de l'image
-		int imageHeight = 20; // Hauteur de l'image
+		int imageWidth = 40; // Largeur de l'image
+		int imageHeight = 40; // Hauteur de l'image
 		
 		int y = position.getLine();
 		int x = position.getColumn();
@@ -83,8 +83,8 @@ public class PaintStrategy {
 		// TODO Auto-generated method stub
 		int blockSize = GameConfiguration.BLOCK_SIZE;
 		
-		int imageWidth = 20; // Largeur de l'image
-		int imageHeight = 20; // Hauteur de l'image
+		int imageWidth = 40; // Largeur de l'image
+		int imageHeight = 40; // Hauteur de l'image
 		
 		for (Unites unite : unites) {
 			Block block = unite.getPosition();
